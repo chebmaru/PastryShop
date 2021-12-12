@@ -84,11 +84,6 @@ namespace PastryShop.Controllers
         {
             //ok
             HttpClient client = psAPI.Initial();
-            product.Ingredients = new List<Ingredient>() { 
-            new Ingredient(){ 
-            Id = 0
-            } };
-            product.Category = new Category() { Id=0};
             string jsonString = JsonConvert.SerializeObject(product);
             HttpContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var addProduct = 
